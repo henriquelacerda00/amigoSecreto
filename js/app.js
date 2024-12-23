@@ -15,8 +15,12 @@ function adicionar(){
 
 function sortear(){
     let botao = document.getElementById('botaoAdd');
+    let botaoST = document.getElementById('botaoST');
+    botaoST.classList.remove('secondary')
+    botaoST.classList.add('disabled');
     botao.classList.remove('primary');
     botao.classList.add('disabled');
+    document.getElementById('lista-amigos').textContent = '';
     embaralhar(amigos);
     let sorteio = document.getElementById('lista-sorteio');
     for(let i=0;i<amigos.length;i++){
@@ -45,5 +49,7 @@ function reiniciar(){
     let botao = document.getElementById('botaoAdd');
     botao.classList.remove('disabled');
     botao.classList.add('button', 'primary');
-    
+    botaoST.classList.remove('disabled');
+    botaoST.classList.add('secondary');
+    amigos = [];
 }
